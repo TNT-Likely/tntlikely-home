@@ -1,0 +1,67 @@
+{
+  "hero": {
+    "greeting": "你好，我是",
+    "name": "孫笑笑",
+    "title": "全端開發者 & 開源愛好者",
+    "description": "用代碼創造價值，用技術改變世界",
+    "subtitle": "探索前沿技術，分享開發經驗，打造優質產品"
+  },
+  "nav": {
+    "about": "關於",
+    "projects": "項目",
+    "social": "社交",
+    "contact": "聯繫"
+  },
+  "about": {
+    "title": "關於我",
+    "description": "一個熱愛技術的開發者，喜歡探索新技術，分享有趣的內容"
+  },
+  "projects": {
+    "title": "我的項目",
+    "viewOnGithub": "在 GitHub 查看",
+    "loading": "加載中...",
+    "noProjects": "暫無項目",
+    "tag": "作品集",
+    "beecount": {
+      "description": "開源記賬App，支持iCloud/自建服務器同步(Supabase/WebDAV/S3)，AI智能記賬"
+    },
+    "lumina": {
+      "description": "讓數據發光 - 永久免費開源的數據協作平台"
+    },
+    "xplayer": {
+      "description": "跨平台IPTV播放器，支持Android/iPhone/macOS/Windows/TV/Linux"
+    }
+  },
+  "social": {
+    "title": "關注我",
+    "xiaohongshu": "小紅書",
+    "douyin": "抖音",
+    "github": "GitHub",
+    "tag": "社交",
+    "githubDesc": "查看我的代碼",
+    "xiaohongshuDesc": "生活 & 技術分享",
+    "douyinDesc": "視頻 & 內容創作"
+  },
+  "theme": {
+    "light": "日間模式",
+    "dark": "暗黑模式",
+    "toggle": "切換主題"
+  },
+  "language": {
+    "switch": "切換語言"
+  },
+  "footer": {
+    "madeWith": "用心製作",
+    "scrollDown": "向下滾動"
+  },
+  "features": {
+    "cleanCode": "簡潔代碼",
+    "cleanCodeDesc": "編寫可維護的優雅代碼",
+    "fastPerformance": "極速性能",
+    "fastPerformanceDesc": "速度與效率的完美結合",
+    "beautifulDesign": "精美設計",
+    "beautifulDesignDesc": "像素級完美的用戶體驗",
+    "innovation": "持續創新",
+    "innovationDesc": "不斷探索新技術前沿"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Sun Xiaoxiao",
+    "title": "Full-Stack Developer & Open Source Enthusiast",
+    "description": "Creating value with code, changing the world with technology",
+    "subtitle": "Exploring cutting-edge tech, sharing dev insights, building quality products"
+  },
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "social": "Social",
+    "contact": "Contact"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "A tech-enthusiast developer who loves exploring new technologies and sharing interesting content"
+  },
+  "projects": {
+    "title": "My Projects",
+    "viewOnGithub": "View on GitHub",
+    "loading": "Loading...",
+    "noProjects": "No projects yet",
+    "tag": "Portfolio",
+    "beecount": {
+      "description": "Open-source finance tracker with iCloud & self-hosted sync (Supabase/WebDAV/S3), AI-powered bookkeeping"
+    },
+    "lumina": {
+      "description": "Light Up Your Data - Permanently free open-source data collaboration platform"
+    },
+    "xplayer": {
+      "description": "Cross-platform IPTV player for Android/iPhone/macOS/Windows/TV/Linux"
+    }
+  },
+  "social": {
+    "title": "Follow Me",
+    "xiaohongshu": "Xiaohongshu",
+    "douyin": "Douyin",
+    "github": "GitHub",
+    "tag": "Connect",
+    "githubDesc": "Check out my code",
+    "xiaohongshuDesc": "Lifestyle & Tech",
+    "douyinDesc": "Videos & Content"
+  },
+  "theme": {
+    "light": "Light Mode",
+    "dark": "Dark Mode",
+    "toggle": "Toggle Theme"
+  },
+  "language": {
+    "switch": "Switch Language"
+  },
+  "footer": {
+    "madeWith": "Made with ❤️",
+    "scrollDown": "Scroll Down"
+  },
+  "features": {
+    "cleanCode": "Clean Code",
+    "cleanCodeDesc": "Writing maintainable and elegant code",
+    "fastPerformance": "Fast Performance",
+    "fastPerformanceDesc": "Optimized for speed and efficiency",
+    "beautifulDesign": "Beautiful Design",
+    "beautifulDesignDesc": "Pixel-perfect UI/UX experiences",
+    "innovation": "Innovation",
+    "innovationDesc": "Always exploring new technologies"
+  }
+}

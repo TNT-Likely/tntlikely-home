@@ -1,0 +1,67 @@
+{
+  "hero": {
+    "greeting": "你好，我是",
+    "name": "孙笑笑",
+    "title": "全栈开发者 & 开源爱好者",
+    "description": "用代码创造价值，用技术改变世界",
+    "subtitle": "探索前沿技术，分享开发经验，打造优质产品"
+  },
+  "nav": {
+    "about": "关于",
+    "projects": "项目",
+    "social": "社交",
+    "contact": "联系"
+  },
+  "about": {
+    "title": "关于我",
+    "description": "一个热爱技术的开发者，喜欢探索新技术，分享有趣的内容"
+  },
+  "projects": {
+    "title": "我的项目",
+    "viewOnGithub": "在 GitHub 查看",
+    "loading": "加载中...",
+    "noProjects": "暂无项目",
+    "tag": "作品集",
+    "beecount": {
+      "description": "开源记账App，支持iCloud/自建服务器同步(Supabase/WebDAV/S3)，AI智能记账"
+    },
+    "lumina": {
+      "description": "让数据发光 - 永久免费开源的数据协作平台"
+    },
+    "xplayer": {
+      "description": "跨平台IPTV播放器，支持Android/iPhone/macOS/Windows/TV/Linux"
+    }
+  },
+  "social": {
+    "title": "关注我",
+    "xiaohongshu": "小红书",
+    "douyin": "抖音",
+    "github": "GitHub",
+    "tag": "社交",
+    "githubDesc": "查看我的代码",
+    "xiaohongshuDesc": "生活 & 技术分享",
+    "douyinDesc": "视频 & 内容创作"
+  },
+  "theme": {
+    "light": "日间模式",
+    "dark": "暗黑模式",
+    "toggle": "切换主题"
+  },
+  "language": {
+    "switch": "切换语言"
+  },
+  "footer": {
+    "madeWith": "用心制作",
+    "scrollDown": "向下滚动"
+  },
+  "features": {
+    "cleanCode": "简洁代码",
+    "cleanCodeDesc": "编写可维护的优雅代码",
+    "fastPerformance": "极速性能",
+    "fastPerformanceDesc": "速度与效率的完美结合",
+    "beautifulDesign": "精美设计",
+    "beautifulDesignDesc": "像素级完美的用户体验",
+    "innovation": "持续创新",
+    "innovationDesc": "不断探索新技术前沿"
+  }
+}

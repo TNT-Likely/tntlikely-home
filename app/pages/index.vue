@@ -184,6 +184,11 @@
             <a href="#projects">{{ t('nav.projects') }}</a>
             <a href="#social">{{ t('nav.social') }}</a>
           </div>
+          <div class="footer-beian">
+            <a href="https://beian.miit.gov.cn" target="_blank" rel="noopener noreferrer">
+              浙ICP备2025214907号-1
+            </a>
+          </div>
         </div>
       </div>
     </footer>
@@ -1056,6 +1061,21 @@ useHead({
     color: var(--color-text-secondary);
     text-decoration: none;
     font-size: 0.9rem;
+    transition: var(--transition);
+
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
+}
+
+.footer-beian {
+  margin-top: 0.5rem;
+
+  a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-size: 0.85rem;
     transition: var(--transition);
 
     &:hover {

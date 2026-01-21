@@ -63,5 +63,26 @@
     "beautifulDesignDesc": "像素級完美的用戶體驗",
     "innovation": "持續創新",
     "innovationDesc": "不斷探索新技術前沿"
+  },
+  "products": {
+    "tag": "蜜蜂家族",
+    "title": "我的產品",
+    "subtitle": "精心打造的移動應用",
+    "footer": "產品",
+    "beecount": {
+      "name": "蜜蜂記帳",
+      "subtitle": "BeeCount",
+      "desc": "簡潔高效的記帳工具，支持多帳本管理、圖表統計、智能分類，讓你輕鬆掌控每一筆開支。"
+    },
+    "beedns": {
+      "name": "蜜蜂域名",
+      "subtitle": "BeeDNS",
+      "desc": "簡潔高效的 DNS 記錄管理工具，輕鬆管理域名解析，支持多雲服務商。"
+    },
+    "tags": {
+      "openSource": "100%開源",
+      "free": "免費",
+      "noAds": "無廣告"
+    }
   }
 }

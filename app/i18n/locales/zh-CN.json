@@ -63,5 +63,26 @@
     "beautifulDesignDesc": "像素级完美的用户体验",
     "innovation": "持续创新",
     "innovationDesc": "不断探索新技术前沿"
+  },
+  "products": {
+    "tag": "蜜蜂家族",
+    "title": "我的产品",
+    "subtitle": "精心打造的移动应用",
+    "footer": "产品",
+    "beecount": {
+      "name": "蜜蜂记账",
+      "subtitle": "BeeCount",
+      "desc": "简洁高效的记账工具，支持多账本管理、图表统计、智能分类，让你轻松掌控每一笔开支。"
+    },
+    "beedns": {
+      "name": "蜜蜂域名",
+      "subtitle": "BeeDNS",
+      "desc": "简洁高效的 DNS 记录管理工具，轻松管理域名解析，支持多云服务商。"
+    },
+    "tags": {
+      "openSource": "100%开源",
+      "free": "免费",
+      "noAds": "无广告"
+    }
   }
 }

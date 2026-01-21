@@ -63,5 +63,26 @@
     "beautifulDesignDesc": "Pixel-perfect UI/UX experiences",
     "innovation": "Innovation",
     "innovationDesc": "Always exploring new technologies"
+  },
+  "products": {
+    "tag": "Bee Family",
+    "title": "My Products",
+    "subtitle": "Crafted mobile applications",
+    "footer": "Products",
+    "beecount": {
+      "name": "BeeCount",
+      "subtitle": "Finance Tracker",
+      "desc": "A simple and efficient bookkeeping tool with multi-ledger management, chart statistics, and smart categorization."
+    },
+    "beedns": {
+      "name": "BeeDNS",
+      "subtitle": "DNS Manager",
+      "desc": "A simple and efficient DNS record management tool for easy domain resolution with multi-provider support."
+    },
+    "tags": {
+      "openSource": "100% Open Source",
+      "free": "Free",
+      "noAds": "Ad-Free"
+    }
   }
 }

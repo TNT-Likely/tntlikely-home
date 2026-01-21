@@ -74,28 +74,53 @@
       </div>
     </section>
 
-    <!-- About Section with Cards -->
-    <section id="about" class="section about-section">
+    <!-- Products Section -->
+    <section id="products" class="section products-section">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">{{ t('nav.about') }}</span>
-          <h2 class="section-title">{{ t('about.title') }}</h2>
-          <p class="section-subtitle">{{ t('about.description') }}</p>
+          <span class="section-tag">{{ t('products.tag') }}</span>
+          <h2 class="section-title">{{ t('products.title') }}</h2>
+          <p class="section-subtitle">{{ t('products.subtitle') }}</p>
         </div>
 
-        <div class="feature-grid">
-          <div
-            class="feature-card glass"
-            v-for="(feature, i) in features"
+        <div class="products-grid">
+          <a
+            v-for="(product, i) in products"
             :key="i"
-            :style="{ animationDelay: `${i * 0.1}s` }"
+            :href="product.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="product-card glass"
+            :style="{ animationDelay: `${i * 0.15}s`, '--product-color': product.color }"
           >
-            <div class="feature-icon">
-              <Icon :name="feature.icon" />
+            <div class="product-preview">
+              <img :src="product.preview" :alt="product.name" />
             </div>
-            <h3 class="feature-title">{{ feature.title }}</h3>
-            <p class="feature-desc">{{ feature.desc }}</p>
-          </div>
+            <div class="product-info">
+              <div class="product-header">
+                <img :src="product.logo" :alt="product.name" class="product-logo" />
+                <div>
+                  <h3 class="product-name">{{ product.name }}</h3>
+                  <span class="product-subtitle">{{ product.subtitle }}</span>
+                </div>
+              </div>
+              <p class="product-desc">{{ product.desc }}</p>
+              <div v-if="product.tags" class="product-tags">
+                <span v-for="tag in product.tags" :key="tag" class="product-tag">{{ tag }}</span>
+              </div>
+              <div class="product-links">
+                <span v-if="product.appStore" class="store-badge">
+                  <Icon name="mdi:apple" />
+                  iOS
+                </span>
+                <span v-if="product.playStore" class="store-badge">
+                  <Icon name="mdi:android" />
+                  Android
+                </span>
+              </div>
+            </div>
+            <Icon name="mdi:arrow-top-right" class="product-arrow" />
+          </a>
         </div>
       </div>
     </section>
@@ -180,7 +205,7 @@
             &copy; {{ new Date().getFullYear() }} {{ t('hero.name') }}. {{ t('footer.madeWith') }}
           </p>
           <div class="footer-links">
-            <a href="#about">{{ t('nav.about') }}</a>
+            <a href="#products">{{ t('products.footer') }}</a>
             <a href="#projects">{{ t('nav.projects') }}</a>
             <a href="#social">{{ t('nav.social') }}</a>
           </div>
@@ -220,6 +245,33 @@ const features = [
     desc: t('features.innovationDesc')
   }
 ]
+
+const products = computed(() => [
+  {
+    name: t('products.beecount.name'),
+    subtitle: t('products.beecount.subtitle'),
+    desc: t('products.beecount.desc'),
+    logo: '/products/beecount_logo.png',
+    preview: '/products/beecount_preview.png',
+    url: 'https://beecount.youths.cc',
+    color: '#F59E0B',
+    appStore: true,
+    playStore: true,
+    tags: [t('products.tags.openSource'), t('products.tags.free'), t('products.tags.noAds')]
+  },
+  {
+    name: t('products.beedns.name'),
+    subtitle: t('products.beedns.subtitle'),
+    desc: t('products.beedns.desc'),
+    logo: '/products/beedns_logo.png',
+    preview: '/products/beedns_preview.png',
+    url: 'https://beedns.youths.cc',
+    color: '#F59E0B',
+    appStore: true,
+    playStore: true,
+    tags: [t('products.tags.noAds')]
+  }
+])
 
 // Particle animation styles
 const getParticleStyle = (i: number) => {
@@ -876,6 +928,173 @@ useHead({
 .feature-desc {
   color: var(--color-text-secondary);
   line-height: 1.6;
+}
+
+// Products Section
+.products-section {
+  background: linear-gradient(180deg, transparent 0%, rgba(6, 182, 212, 0.03) 50%, transparent 100%);
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.product-card {
+  position: relative;
+  text-decoration: none;
+  color: var(--color-text);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  background: var(--color-bg-secondary);
+  border: 2px solid var(--color-border);
+  animation: fadeInUp 0.8s ease-out backwards;
+
+  &:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow:
+      0 25px 60px rgba(245, 158, 11, 0.2),
+      0 0 40px rgba(245, 158, 11, 0.1);
+    border-color: var(--product-color, #F59E0B);
+
+    .product-preview img {
+      transform: scale(1.08);
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+    }
+
+    .product-arrow {
+      transform: translate(5px, -5px);
+      opacity: 1;
+    }
+
+    .product-logo {
+      transform: rotate(10deg) scale(1.1);
+    }
+  }
+}
+
+.product-preview {
+  position: relative;
+  padding: 1.5rem 1.5rem 0;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(251, 191, 36, 0.03));
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 320px;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    transition: transform 0.5s ease;
+  }
+}
+
+.product-info {
+  padding: 1.5rem 2rem 2rem;
+  position: relative;
+}
+
+.product-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.product-logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+}
+
+.product-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--color-text);
+}
+
+.product-subtitle {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.product-desc {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.product-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.product-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.6rem;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(5, 150, 105, 0.1));
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #10b981;
+}
+
+.product-links {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.store-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.9rem;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(251, 191, 36, 0.1));
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--product-color, #F59E0B);
+
+  &.coming-soon {
+    background: rgba(156, 163, 175, 0.1);
+    border-color: rgba(156, 163, 175, 0.3);
+    color: var(--color-text-secondary);
+  }
+}
+
+.product-arrow {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 1.3rem;
+  color: var(--product-color, #F59E0B);
+  opacity: 0.5;
+  transition: all 0.3s ease;
 }
 
 // Social Grid

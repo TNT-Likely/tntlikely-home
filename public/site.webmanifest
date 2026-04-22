@@ -1,0 +1,14 @@
+{
+  "name": "孙笑笑 · Sun Xiaoxiao",
+  "short_name": "孙笑笑",
+  "description": "孙笑笑（likely / TNT-Likely）— 杭州全栈工程师，开源作者。",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f4ead5",
+  "theme_color": "#f4ead5",
+  "lang": "zh-CN",
+  "icons": [
+    { "src": "/avatar.jpeg", "sizes": "512x512", "type": "image/jpeg", "purpose": "any" }
+  ]
+}

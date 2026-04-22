@@ -1,7 +1,7 @@
 <template>
   <div class="paper-site">
-    <nav class="nav">
-      <div class="nav-logo"><span class="dot" /> <span>{{ t('name') }}</span> / likely</div>
+    <nav class="nav" aria-label="primary">
+      <div class="nav-logo"><span class="dot" aria-hidden="true" /> <span>{{ t('name') }}</span> / likely</div>
       <div class="nav-right">
         <div class="nav-links">
           <a href="#products">{{ t('nav.products') }}</a>
@@ -14,20 +14,22 @@
             v-for="l in langOptions"
             :key="l.code"
             :class="{ active: locale === l.code }"
+            :aria-label="`Switch to ${l.code}`"
+            :aria-pressed="locale === l.code"
             @click="setLocale(l.code)"
           >{{ l.label }}</button>
         </div>
       </div>
     </nav>
 
-    <div class="wrap">
+    <main class="wrap">
       <!-- HERO -->
       <section class="hero">
         <div class="portrait-wrap">
           <div class="tape" style="top:-12px; left:28px; transform: rotate(-8deg);" />
           <div class="tape" style="top:-10px; right:22px; transform: rotate(12deg);" />
           <div class="portrait">
-            <img src="/avatar.jpeg" alt="孙笑笑" />
+            <img src="/avatar.jpeg" alt="孙笑笑 Sun Xiaoxiao 头像" width="360" height="360" fetchpriority="high" decoding="async" />
             <div class="portrait-caption">{{ t('hero.portraitCaption') }}</div>
           </div>
           <div class="sticker hi">{{ t('hero.hi') }}</div>
@@ -78,7 +80,7 @@
           <a class="product" href="https://beecount.youths.cc" target="_blank" rel="noopener">
             <div class="product-arrow">↗</div>
             <div class="product-head">
-              <div class="product-logo"><img src="/products/beecount_logo.png" alt="BeeCount" /></div>
+              <div class="product-logo"><img src="/products/beecount_logo.png" alt="BeeCount 蜜蜂记账 logo" width="64" height="64" loading="lazy" decoding="async" /></div>
               <div>
                 <div class="product-name">{{ t('products.beecount.name') }}</div>
                 <div class="product-tag">{{ t('products.beecount.tag') }}</div>
@@ -97,7 +99,7 @@
           <a class="product" href="https://beedns.youths.cc" target="_blank" rel="noopener">
             <div class="product-arrow">↗</div>
             <div class="product-head">
-              <div class="product-logo"><img src="/products/beedns_logo.png" alt="BeeDNS" /></div>
+              <div class="product-logo"><img src="/products/beedns_logo.png" alt="BeeDNS 蜜蜂域名 logo" width="64" height="64" loading="lazy" decoding="async" /></div>
               <div>
                 <div class="product-name">{{ t('products.beedns.name') }}</div>
                 <div class="product-tag">{{ t('products.beedns.tag') }}</div>
@@ -186,9 +188,9 @@
           </div>
         </section>
       </div>
-    </div>
+    </main>
 
-    <footer class="foot">
+    <footer class="foot" aria-label="site footer">
       <div class="foot-inner">
         <div class="foot-mark">
           <span class="foot-dot" />
@@ -236,32 +238,54 @@ function formatK(n: number | null) {
   return String(n)
 }
 
-async function fetchRepo(slug: string): Promise<{ stars: number; forks: number } | null> {
+type RepoData = { stars: number; forks: number }
+
+function readCache(slug: string): RepoData | null {
   try {
-    const key = 'gh:' + slug
-    const raw = typeof localStorage !== 'undefined' ? localStorage.getItem(key) : null
-    const cached = raw ? JSON.parse(raw) : null
-    if (cached && Date.now() - cached.t < 30 * 60 * 1000) return cached.d
-    const r = await fetch('https://api.github.com/repos/' + slug)
-    if (!r.ok) return null
-    const j = await r.json()
-    const d = { stars: j.stargazers_count, forks: j.forks_count }
-    try { localStorage.setItem(key, JSON.stringify({ t: Date.now(), d })) } catch {}
-    return d
+    const raw = localStorage.getItem('gh:' + slug)
+    if (!raw) return null
+    const parsed = JSON.parse(raw)
+    return parsed?.d ?? null
   } catch {
     return null
   }
 }
 
-onMounted(async () => {
-  // live update stars/forks
-  await Promise.all(
-    repos.value.map(async (r, i) => {
-      const d = await fetchRepo(r.repo)
-      if (!d) return
-      repos.value[i] = { ...r, stars: d.stars, forks: r.forks === null ? null : d.forks }
-    })
-  )
+function writeCache(slug: string, d: RepoData) {
+  try { localStorage.setItem('gh:' + slug, JSON.stringify({ t: Date.now(), d })) } catch {}
+}
+
+async function fetchFreshRepo(slug: string): Promise<RepoData | null> {
+  try {
+    const r = await fetch('https://api.github.com/repos/' + slug)
+    if (!r.ok) return null
+    const j = await r.json()
+    return { stars: j.stargazers_count, forks: j.forks_count }
+  } catch {
+    return null
+  }
+}
+
+function applyRepoData(i: number, d: RepoData) {
+  const r = repos.value[i]
+  if (!r) return
+  repos.value[i] = { ...r, stars: d.stars, forks: r.forks === null ? null : d.forks }
+}
+
+onMounted(() => {
+  // 1) apply cached values immediately (cache never expires — stale is fine as a fallback)
+  repos.value.forEach((r, i) => {
+    const cached = readCache(r.repo)
+    if (cached) applyRepoData(i, cached)
+  })
+
+  // 2) revalidate in the background on every visit; keep cache on failure
+  repos.value.forEach(async (r, i) => {
+    const fresh = await fetchFreshRepo(r.repo)
+    if (!fresh) return
+    applyRepoData(i, fresh)
+    writeCache(r.repo, fresh)
+  })
 
   // subtle cursor-follow tilt
   document.querySelectorAll('.paper-site .stat, .paper-site .product, .paper-site .project').forEach((el) => {
@@ -290,11 +314,106 @@ onMounted(async () => {
   })
 })
 
+const siteUrl = useRuntimeConfig().public.siteUrl as string
+
+const seo = computed(() => {
+  const isZh = locale.value.startsWith('zh')
+  return isZh
+    ? {
+        title: '孙笑笑 · Sun Xiaoxiao — 全栈工程师 & 独立开发者',
+        description: '孙笑笑（likely / TNT-Likely）— 杭州全栈工程师，10+ 年开发经验。做 BeeCount 蜜蜂记账、BeeDNS 蜜蜂域名、PanWatch 盯盘侠、xplayer、Lumina 等开源产品。',
+        ogLocale: locale.value === 'zh-TW' ? 'zh_TW' : 'zh_CN'
+      }
+    : {
+        title: 'Sun Xiaoxiao · likely — Fullstack Engineer & Indie OSS Maker',
+        description: 'Sun Xiaoxiao (likely / TNT-Likely) — fullstack engineer from Hangzhou with 10+ years of experience. Building BeeCount, BeeDNS, PanWatch, xplayer, Lumina and other open-source products.',
+        ogLocale: 'en_US'
+      }
+})
+
 useHead({
-  title: '孙笑笑 · Sun Xiaoxiao — Fullstack Engineer & OSS Maker',
-  meta: [
-    { name: 'description', content: '孙笑笑的个人网站 — fullstack engineer, 做开源, 做产品' }
+  htmlAttrs: { lang: () => locale.value },
+  link: [
+    { rel: 'canonical', href: siteUrl + '/' },
+    { rel: 'alternate', hreflang: 'zh-CN', href: siteUrl + '/' },
+    { rel: 'alternate', hreflang: 'en', href: siteUrl + '/' },
+    { rel: 'alternate', hreflang: 'zh-TW', href: siteUrl + '/' },
+    { rel: 'alternate', hreflang: 'x-default', href: siteUrl + '/' }
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@graph': [
+          {
+            '@type': 'Person',
+            '@id': siteUrl + '/#person',
+            name: '孙笑笑',
+            alternateName: ['Sun Xiaoxiao', 'likely', 'TNT-Likely'],
+            url: siteUrl + '/',
+            image: siteUrl + '/avatar.jpeg',
+            jobTitle: 'Fullstack Engineer',
+            description: 'Fullstack engineer & open-source maker building BeeCount, BeeDNS and other indie products.',
+            sameAs: [
+              'https://github.com/TNT-Likely',
+              'https://www.zhihu.com/people/likely-10',
+              'https://juejin.cn/user/2629687543598200',
+              'https://xhslink.com/m/8K1ekg7EFOq',
+              'https://v.douyin.com/YG7tUweYYyQ/'
+            ],
+            knowsAbout: ['Fullstack Development', 'Open Source', 'Flutter', 'TypeScript', 'Go', 'Python'],
+            address: { '@type': 'PostalAddress', addressLocality: 'Hangzhou', addressCountry: 'CN' }
+          },
+          {
+            '@type': 'WebSite',
+            '@id': siteUrl + '/#website',
+            url: siteUrl + '/',
+            name: '孙笑笑 · Sun Xiaoxiao',
+            inLanguage: ['zh-CN', 'en', 'zh-TW'],
+            author: { '@id': siteUrl + '/#person' },
+            publisher: { '@id': siteUrl + '/#person' }
+          },
+          {
+            '@type': 'SoftwareApplication',
+            name: 'BeeCount 蜜蜂记账',
+            url: 'https://beecount.youths.cc',
+            image: siteUrl + '/products/beecount_logo.png',
+            applicationCategory: 'FinanceApplication',
+            operatingSystem: 'iOS, Android, Web',
+            offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+            author: { '@id': siteUrl + '/#person' }
+          },
+          {
+            '@type': 'SoftwareApplication',
+            name: 'BeeDNS 蜜蜂域名',
+            url: 'https://beedns.youths.cc',
+            image: siteUrl + '/products/beedns_logo.png',
+            applicationCategory: 'UtilitiesApplication',
+            operatingSystem: 'iOS, Android',
+            offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+            author: { '@id': siteUrl + '/#person' }
+          }
+        ]
+      })
+    }
   ]
+})
+
+useSeoMeta({
+  title: () => seo.value.title,
+  description: () => seo.value.description,
+  ogType: 'profile',
+  ogTitle: () => seo.value.title,
+  ogDescription: () => seo.value.description,
+  ogUrl: siteUrl + '/',
+  ogImage: siteUrl + '/avatar.jpeg',
+  ogImageAlt: '孙笑笑 · Sun Xiaoxiao',
+  ogLocale: () => seo.value.ogLocale,
+  twitterCard: 'summary_large_image',
+  twitterTitle: () => seo.value.title,
+  twitterDescription: () => seo.value.description,
+  twitterImage: siteUrl + '/avatar.jpeg'
 })
 </script>
 

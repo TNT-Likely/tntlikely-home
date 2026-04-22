@@ -319,9 +319,10 @@ onMounted(() => {
 })
 
 useHead({
-  title: '孙笑笑 - 全栈开发者 & 开源爱好者',
+  title: '孙笑笑 - 全栈开发者 & 开源爱好者（旧版）',
   meta: [
-    { name: 'description', content: '孙笑笑的个人网站，全栈开发者，10+年开发经验，热爱开源和技术分享' }
+    { name: 'description', content: '孙笑笑的个人网站（旧版），全栈开发者，10+年开发经验，热爱开源和技术分享' },
+    { name: 'robots', content: 'noindex,nofollow' }
   ]
 })
 </script>

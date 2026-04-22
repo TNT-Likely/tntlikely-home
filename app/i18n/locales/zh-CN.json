@@ -1,27 +1,94 @@
 {
+  "name": "孙笑笑",
+  "nav": {
+    "about": "关于",
+    "products": "产品",
+    "projects": "项目",
+    "articles": "文章",
+    "social": "社交",
+    "contact": "联系"
+  },
   "hero": {
     "greeting": "你好，我是",
     "name": "孙笑笑",
     "title": "全栈开发者 & 开源爱好者",
     "description": "用代码创造价值，用技术改变世界",
-    "subtitle": "探索前沿技术，分享开发经验，打造优质产品"
-  },
-  "nav": {
-    "about": "关于",
-    "projects": "项目",
-    "social": "社交",
-    "contact": "联系"
+    "subtitle": "探索前沿技术，分享开发经验，打造优质产品",
+    "portraitCaption": "— 大概率在调 bug —",
+    "hi": "你好 ✦",
+    "eyebrow": "fullstack engineer · 杭州 · since 2015",
+    "nameA": "孙",
+    "nameB": "笑",
+    "nameC": "笑",
+    "nameSub": "sun xiaoxiao / likely",
+    "bioMain": "用代码创造价值，用技术改变世界。",
+    "bioBody": "做开源，做产品，偶尔写字。相信小而美的东西能比大而全走得更远。",
+    "bioDim": "",
+    "statOss": "开源项目",
+    "statBee": "BeeCount ★",
+    "statYears": "年 · 做产品"
   },
   "about": {
     "title": "关于我",
-    "description": "一个热爱技术的开发者，喜欢探索新技术，分享有趣的内容"
+    "description": "一个热爱技术的开发者，喜欢探索新技术，分享有趣的内容",
+    "body": "写代码十年。白天做正事，晚上和周末给自己做点东西 — 一般是小工具、小应用，然后丢到 GitHub 上。",
+    "bodyEn": ""
+  },
+  "scrollHint": "下滑看看 ↓",
+  "sections": {
+    "products": "产品",
+    "productsSub": "/ products",
+    "projects": "开源",
+    "projectsSub": "/ open source",
+    "articles": "写字",
+    "articlesSub": "/ writing",
+    "contact": "聊聊",
+    "contactSub": "/ say hi"
+  },
+  "products": {
+    "tag": "蜜蜂家族",
+    "title": "我的产品",
+    "subtitle": "精心打造的移动应用",
+    "footer": "产品",
+    "familySticker": "蜜蜂家族 🐝",
+    "beecount": {
+      "name": "蜜蜂记账",
+      "subtitle": "BeeCount",
+      "tag": "BeeCount · 记账工具",
+      "desc": "开源跨端记账 App — iOS / Android / Web。支持 iCloud 与 Supabase / WebDAV / S3 同步，AI 智能记账，OCR 与语音输入，8+ 语言。"
+    },
+    "beedns": {
+      "name": "蜜蜂域名",
+      "subtitle": "BeeDNS",
+      "tag": "BeeDNS · DNS 管理",
+      "desc": "简洁高效的 DNS 记录管理工具，一处管理多云服务商的域名解析，支持阿里云、腾讯云、Cloudflare 等。"
+    },
+    "badges": {
+      "new": "★ 新增: Web 版",
+      "oss": "100% 开源",
+      "noAds": "无广告"
+    },
+    "tags": {
+      "openSource": "100%开源",
+      "free": "免费",
+      "noAds": "无广告"
+    }
   },
   "projects": {
     "title": "我的项目",
+    "tag": "作品集",
     "viewOnGithub": "在 GitHub 查看",
     "loading": "加载中...",
     "noProjects": "暂无项目",
-    "tag": "作品集",
+    "topSticker": "BeeCount ★ 1.4k",
+    "seeAll": "查看全部 26 个仓库 →",
+    "desc": {
+      "beecount": "🐝 开源跨端记账 App · iCloud / Supabase / WebDAV / S3 同步 · AI 记账 · iOS/Android/Web。",
+      "panwatch": "盯盘侠 — AI 驱动的股票监控助手。A 股 / 港股 / 美股，多账户持仓管理，智能 Agent 自动分析。",
+      "xplayer": "全平台 IPTV 播放器 — Android / iOS / macOS / Windows / TV / Linux，一次搞定。",
+      "lumina": "让数据发光 — 永久免费开源的数据协作平台，可视化 + 协作 + 看板。",
+      "killport": "🔫 跨平台端口管理工具 — 一条命令解决端口占用的烦恼。"
+    },
     "beecount": {
       "description": "开源记账App，支持iCloud/自建服务器同步(Supabase/WebDAV/S3)，AI智能记账"
     },
@@ -32,12 +99,22 @@
       "description": "跨平台IPTV播放器，支持Android/iPhone/macOS/Windows/TV/Linux"
     }
   },
+  "articles": {
+    "zhihuMeta": "技术专栏 · 随笔",
+    "juejinMeta": "前端 · 工程化 · 开源",
+    "note": "* 去主页看所有文章 →"
+  },
+  "contact": {
+    "body": "喜欢的话随手 ★ 一下我的项目，或者在任一平台找我聊聊。",
+    "xiaohongshu": "小红书",
+    "douyin": "抖音"
+  },
   "social": {
     "title": "关注我",
+    "tag": "社交",
+    "github": "GitHub",
     "xiaohongshu": "小红书",
     "douyin": "抖音",
-    "github": "GitHub",
-    "tag": "社交",
     "githubDesc": "查看我的代码",
     "xiaohongshuDesc": "生活 & 技术分享",
     "douyinDesc": "视频 & 内容创作"
@@ -52,7 +129,8 @@
   },
   "footer": {
     "madeWith": "用心制作",
-    "scrollDown": "向下滚动"
+    "scrollDown": "向下滚动",
+    "copy": "© 2026 · 用代码创造价值"
   },
   "features": {
     "cleanCode": "简洁代码",
@@ -63,26 +141,5 @@
     "beautifulDesignDesc": "像素级完美的用户体验",
     "innovation": "持续创新",
     "innovationDesc": "不断探索新技术前沿"
-  },
-  "products": {
-    "tag": "蜜蜂家族",
-    "title": "我的产品",
-    "subtitle": "精心打造的移动应用",
-    "footer": "产品",
-    "beecount": {
-      "name": "蜜蜂记账",
-      "subtitle": "BeeCount",
-      "desc": "简洁高效的记账工具，支持多账本管理、图表统计、智能分类，让你轻松掌控每一笔开支。"
-    },
-    "beedns": {
-      "name": "蜜蜂域名",
-      "subtitle": "BeeDNS",
-      "desc": "简洁高效的 DNS 记录管理工具，轻松管理域名解析，支持多云服务商。"
-    },
-    "tags": {
-      "openSource": "100%开源",
-      "free": "免费",
-      "noAds": "无广告"
-    }
   }
 }

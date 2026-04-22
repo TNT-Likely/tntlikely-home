@@ -1,27 +1,94 @@
 {
+  "name": "Sun Xiaoxiao",
+  "nav": {
+    "about": "About",
+    "products": "products",
+    "projects": "projects",
+    "articles": "articles",
+    "social": "Social",
+    "contact": "contact"
+  },
   "hero": {
     "greeting": "Hi, I'm",
     "name": "Sun Xiaoxiao",
     "title": "Full-Stack Developer & Open Source Enthusiast",
     "description": "Creating value with code, changing the world with technology",
-    "subtitle": "Exploring cutting-edge tech, sharing dev insights, building quality products"
-  },
-  "nav": {
-    "about": "About",
-    "projects": "Projects",
-    "social": "Social",
-    "contact": "Contact"
+    "subtitle": "Exploring cutting-edge tech, sharing dev insights, building quality products",
+    "portraitCaption": "— me, probably debugging —",
+    "hi": "hi there ✦",
+    "eyebrow": "fullstack engineer · hangzhou · since 2015",
+    "nameA": "Sun",
+    "nameB": " X",
+    "nameC": "iaoxiao",
+    "nameSub": "孙笑笑 · likely",
+    "bioMain": "Build value with code. Change the world with tech.",
+    "bioBody": "Open source, indie products, the occasional essay. I believe small, sharp things go further than big, busy ones.",
+    "bioDim": "Fullstack engineer from Hangzhou — building things I'd actually want to use myself.",
+    "statOss": "OSS Projects",
+    "statBee": "on BeeCount",
+    "statYears": "Years Shipping"
   },
   "about": {
     "title": "About Me",
-    "description": "A tech-enthusiast developer who loves exploring new technologies and sharing interesting content"
+    "description": "A tech-enthusiast developer who loves exploring new technologies and sharing interesting content",
+    "body": "10 years writing code. Day job by day, indie tools by night and weekend — usually small utilities and apps I throw up on GitHub.",
+    "bodyEn": "Always tinkering. Always shipping."
+  },
+  "scrollHint": "scroll ↓",
+  "sections": {
+    "products": "Products",
+    "productsSub": "/ 产品",
+    "projects": "Open Source",
+    "projectsSub": "/ 开源",
+    "articles": "Writing",
+    "articlesSub": "/ 写字",
+    "contact": "Say hi",
+    "contactSub": "/ 聊聊"
+  },
+  "products": {
+    "tag": "Bee Family",
+    "title": "My Products",
+    "subtitle": "Crafted mobile applications",
+    "footer": "Products",
+    "familySticker": "bee family 🐝",
+    "beecount": {
+      "name": "BeeCount",
+      "subtitle": "Finance Tracker",
+      "tag": "蜜蜂记账 · finance tracker",
+      "desc": "Open-source finance tracker — iOS / Android / Web. iCloud + Supabase / WebDAV / S3 sync, AI-powered bookkeeping, OCR & voice input, 8+ languages."
+    },
+    "beedns": {
+      "name": "BeeDNS",
+      "subtitle": "DNS Manager",
+      "tag": "蜜蜂域名 · DNS manager",
+      "desc": "Lightweight DNS record manager — one place for all your cloud providers. Supports Aliyun, Tencent Cloud, Cloudflare, and more."
+    },
+    "badges": {
+      "new": "★ NEW: Web",
+      "oss": "100% open source",
+      "noAds": "no ads"
+    },
+    "tags": {
+      "openSource": "100% Open Source",
+      "free": "Free",
+      "noAds": "Ad-Free"
+    }
   },
   "projects": {
     "title": "My Projects",
+    "tag": "Portfolio",
     "viewOnGithub": "View on GitHub",
     "loading": "Loading...",
     "noProjects": "No projects yet",
-    "tag": "Portfolio",
+    "topSticker": "BeeCount ★ 1.4k",
+    "seeAll": "see all 26 repos →",
+    "desc": {
+      "beecount": "🐝 OSS finance tracker · iCloud / Supabase / WebDAV / S3 sync · AI bookkeeping · iOS / Android / Web.",
+      "panwatch": "PanWatch — AI-powered stock monitor. A-share / HK / US stocks, multi-portfolio, intelligent agent analysis.",
+      "xplayer": "Cross-platform IPTV player — Android / iOS / macOS / Windows / TV / Linux in one codebase.",
+      "lumina": "Lumina — free & open-source data collaboration platform. Visualization + dashboards + teamwork.",
+      "killport": "🔫 Cross-platform port killer — one command to free that stuck port."
+    },
     "beecount": {
       "description": "Open-source finance tracker with iCloud & self-hosted sync (Supabase/WebDAV/S3), AI-powered bookkeeping"
     },
@@ -32,12 +99,22 @@
       "description": "Cross-platform IPTV player for Android/iPhone/macOS/Windows/TV/Linux"
     }
   },
+  "articles": {
+    "zhihuMeta": "Tech columns & notes",
+    "juejinMeta": "Frontend · tooling · OSS",
+    "note": "* Full archive on my profiles →"
+  },
+  "contact": {
+    "body": "Drop a ★ on any project you like, or find me on any platform below.",
+    "xiaohongshu": "Xiaohongshu",
+    "douyin": "Douyin"
+  },
   "social": {
     "title": "Follow Me",
+    "tag": "Connect",
+    "github": "GitHub",
     "xiaohongshu": "Xiaohongshu",
     "douyin": "Douyin",
-    "github": "GitHub",
-    "tag": "Connect",
     "githubDesc": "Check out my code",
     "xiaohongshuDesc": "Lifestyle & Tech",
     "douyinDesc": "Videos & Content"
@@ -52,7 +129,8 @@
   },
   "footer": {
     "madeWith": "Made with ❤️",
-    "scrollDown": "Scroll Down"
+    "scrollDown": "Scroll Down",
+    "copy": "© 2026 · build with code, ship with care"
   },
   "features": {
     "cleanCode": "Clean Code",
@@ -63,26 +141,5 @@
     "beautifulDesignDesc": "Pixel-perfect UI/UX experiences",
     "innovation": "Innovation",
     "innovationDesc": "Always exploring new technologies"
-  },
-  "products": {
-    "tag": "Bee Family",
-    "title": "My Products",
-    "subtitle": "Crafted mobile applications",
-    "footer": "Products",
-    "beecount": {
-      "name": "BeeCount",
-      "subtitle": "Finance Tracker",
-      "desc": "A simple and efficient bookkeeping tool with multi-ledger management, chart statistics, and smart categorization."
-    },
-    "beedns": {
-      "name": "BeeDNS",
-      "subtitle": "DNS Manager",
-      "desc": "A simple and efficient DNS record management tool for easy domain resolution with multi-provider support."
-    },
-    "tags": {
-      "openSource": "100% Open Source",
-      "free": "Free",
-      "noAds": "Ad-Free"
-    }
   }
 }

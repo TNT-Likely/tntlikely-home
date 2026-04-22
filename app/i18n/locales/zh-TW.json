@@ -1,88 +1,145 @@
 {
+  "name": "孫笑笑",
+  "nav": {
+    "about": "關於",
+    "products": "產品",
+    "projects": "專案",
+    "articles": "文章",
+    "social": "社交",
+    "contact": "聯絡"
+  },
   "hero": {
     "greeting": "你好，我是",
     "name": "孫笑笑",
     "title": "全端開發者 & 開源愛好者",
-    "description": "用代碼創造價值，用技術改變世界",
-    "subtitle": "探索前沿技術，分享開發經驗，打造優質產品"
-  },
-  "nav": {
-    "about": "關於",
-    "projects": "項目",
-    "social": "社交",
-    "contact": "聯繫"
+    "description": "用程式碼創造價值，用技術改變世界",
+    "subtitle": "探索前沿技術，分享開發經驗，打造優質產品",
+    "portraitCaption": "— 大概率在調 bug —",
+    "hi": "你好 ✦",
+    "eyebrow": "fullstack engineer · 杭州 · since 2015",
+    "nameA": "孫",
+    "nameB": "笑",
+    "nameC": "笑",
+    "nameSub": "sun xiaoxiao / likely",
+    "bioMain": "用程式碼創造價值，用技術改變世界。",
+    "bioBody": "做開源，做產品，偶爾寫字。相信小而美的東西能比大而全走得更遠。",
+    "bioDim": "",
+    "statOss": "開源專案",
+    "statBee": "BeeCount ★",
+    "statYears": "年 · 做產品"
   },
   "about": {
     "title": "關於我",
-    "description": "一個熱愛技術的開發者，喜歡探索新技術，分享有趣的內容"
+    "description": "一個熱愛技術的開發者，喜歡探索新技術，分享有趣的內容",
+    "body": "寫程式十年。白天做正事，晚上和週末給自己做點東西 — 一般是小工具、小應用，然後丟到 GitHub 上。",
+    "bodyEn": ""
   },
-  "projects": {
-    "title": "我的項目",
-    "viewOnGithub": "在 GitHub 查看",
-    "loading": "加載中...",
-    "noProjects": "暫無項目",
-    "tag": "作品集",
-    "beecount": {
-      "description": "開源記賬App，支持iCloud/自建服務器同步(Supabase/WebDAV/S3)，AI智能記賬"
-    },
-    "lumina": {
-      "description": "讓數據發光 - 永久免費開源的數據協作平台"
-    },
-    "xplayer": {
-      "description": "跨平台IPTV播放器，支持Android/iPhone/macOS/Windows/TV/Linux"
-    }
-  },
-  "social": {
-    "title": "關注我",
-    "xiaohongshu": "小紅書",
-    "douyin": "抖音",
-    "github": "GitHub",
-    "tag": "社交",
-    "githubDesc": "查看我的代碼",
-    "xiaohongshuDesc": "生活 & 技術分享",
-    "douyinDesc": "視頻 & 內容創作"
-  },
-  "theme": {
-    "light": "日間模式",
-    "dark": "暗黑模式",
-    "toggle": "切換主題"
-  },
-  "language": {
-    "switch": "切換語言"
-  },
-  "footer": {
-    "madeWith": "用心製作",
-    "scrollDown": "向下滾動"
-  },
-  "features": {
-    "cleanCode": "簡潔代碼",
-    "cleanCodeDesc": "編寫可維護的優雅代碼",
-    "fastPerformance": "極速性能",
-    "fastPerformanceDesc": "速度與效率的完美結合",
-    "beautifulDesign": "精美設計",
-    "beautifulDesignDesc": "像素級完美的用戶體驗",
-    "innovation": "持續創新",
-    "innovationDesc": "不斷探索新技術前沿"
+  "scrollHint": "下滑看看 ↓",
+  "sections": {
+    "products": "產品",
+    "productsSub": "/ products",
+    "projects": "開源",
+    "projectsSub": "/ open source",
+    "articles": "寫字",
+    "articlesSub": "/ writing",
+    "contact": "聊聊",
+    "contactSub": "/ say hi"
   },
   "products": {
     "tag": "蜜蜂家族",
     "title": "我的產品",
-    "subtitle": "精心打造的移動應用",
+    "subtitle": "精心打造的行動應用",
     "footer": "產品",
+    "familySticker": "蜜蜂家族 🐝",
     "beecount": {
       "name": "蜜蜂記帳",
       "subtitle": "BeeCount",
-      "desc": "簡潔高效的記帳工具，支持多帳本管理、圖表統計、智能分類，讓你輕鬆掌控每一筆開支。"
+      "tag": "BeeCount · 記帳工具",
+      "desc": "開源跨端記帳 App — iOS / Android / Web。支援 iCloud 與 Supabase / WebDAV / S3 同步，AI 智能記帳，OCR 與語音輸入，8+ 語言。"
     },
     "beedns": {
       "name": "蜜蜂域名",
       "subtitle": "BeeDNS",
-      "desc": "簡潔高效的 DNS 記錄管理工具，輕鬆管理域名解析，支持多雲服務商。"
+      "tag": "BeeDNS · DNS 管理",
+      "desc": "簡潔高效的 DNS 記錄管理工具，一處管理多雲服務商的域名解析，支援阿里雲、騰訊雲、Cloudflare 等。"
+    },
+    "badges": {
+      "new": "★ 新增: Web 版",
+      "oss": "100% 開源",
+      "noAds": "無廣告"
     },
     "tags": {
       "openSource": "100%開源",
       "free": "免費",
       "noAds": "無廣告"
     }
+  },
+  "projects": {
+    "title": "我的專案",
+    "tag": "作品集",
+    "viewOnGithub": "在 GitHub 查看",
+    "loading": "載入中...",
+    "noProjects": "暫無專案",
+    "topSticker": "BeeCount ★ 1.4k",
+    "seeAll": "查看全部 26 個倉庫 →",
+    "desc": {
+      "beecount": "🐝 開源跨端記帳 App · iCloud / Supabase / WebDAV / S3 同步 · AI 記帳 · iOS/Android/Web。",
+      "panwatch": "盯盤俠 — AI 驅動的股票監控助手。A 股 / 港股 / 美股，多帳戶持倉管理，智能 Agent 自動分析。",
+      "xplayer": "全平台 IPTV 播放器 — Android / iOS / macOS / Windows / TV / Linux，一次搞定。",
+      "lumina": "讓資料發光 — 永久免費開源的資料協作平台，視覺化 + 協作 + 看板。",
+      "killport": "🔫 跨平台埠管理工具 — 一條指令解決埠佔用的煩惱。"
+    },
+    "beecount": {
+      "description": "開源記帳App，支援iCloud/自建伺服器同步(Supabase/WebDAV/S3)，AI智能記帳"
+    },
+    "lumina": {
+      "description": "讓資料發光 - 永久免費開源的資料協作平台"
+    },
+    "xplayer": {
+      "description": "跨平台IPTV播放器，支援Android/iPhone/macOS/Windows/TV/Linux"
+    }
+  },
+  "articles": {
+    "zhihuMeta": "技術專欄 · 隨筆",
+    "juejinMeta": "前端 · 工程化 · 開源",
+    "note": "* 去主頁看所有文章 →"
+  },
+  "contact": {
+    "body": "喜歡的話隨手 ★ 一下我的專案，或者在任一平台找我聊聊。",
+    "xiaohongshu": "小紅書",
+    "douyin": "抖音"
+  },
+  "social": {
+    "title": "關注我",
+    "tag": "社交",
+    "github": "GitHub",
+    "xiaohongshu": "小紅書",
+    "douyin": "抖音",
+    "githubDesc": "查看我的程式碼",
+    "xiaohongshuDesc": "生活 & 技術分享",
+    "douyinDesc": "視頻 & 內容創作"
+  },
+  "theme": {
+    "light": "日間模式",
+    "dark": "暗黑模式",
+    "toggle": "切換語言"
+  },
+  "language": {
+    "switch": "切換語言"
+  },
+  "footer": {
+    "madeWith": "用心製作",
+    "scrollDown": "向下滾動",
+    "copy": "© 2026 · 用程式碼創造價值"
+  },
+  "features": {
+    "cleanCode": "簡潔程式碼",
+    "cleanCodeDesc": "編寫可維護的優雅程式碼",
+    "fastPerformance": "極速效能",
+    "fastPerformanceDesc": "速度與效率的完美結合",
+    "beautifulDesign": "精美設計",
+    "beautifulDesignDesc": "像素級完美的使用者體驗",
+    "innovation": "持續創新",
+    "innovationDesc": "不斷探索新技術前沿"
   }
 }
